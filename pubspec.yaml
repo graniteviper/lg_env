@@ -1,5 +1,5 @@
 name: task2
-description: "A new Flutter project."
+description: "Task 2 for liquid galaxy lab GSOC 2026"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -34,6 +34,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  provider: ^6.1.5+1
+  shared_preferences: ^2.5.4
+  path_provider: ^2.1.5
+  dartssh2: ^2.13.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +67,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/logos/github_logo.webp
+    - assets/logos/google-developers.webp
+    - assets/logos/liquid-galaxy.webp
+    - assets/kml/sendKmlExample.kml
+    - assets/kml/pyramid.kml
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

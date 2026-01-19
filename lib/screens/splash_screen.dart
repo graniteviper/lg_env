@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Hero(
               tag: 'logo',
               child: Image.asset(
-                'assets/logos/github_logo.webp',
+                'assets/logos/liquid-galaxy.webp',
                 width: 150,
                 height: 150,
               ),
@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
               runSpacing: 20,
               children: const [
                 LogoImage('assets/logos/github_logo.webp'),
-                LogoImage('assets/logos/github_logo.webp'),
+                LogoImage('assets/logos/google-developers.webp'),
               ],
             ),
           ],
