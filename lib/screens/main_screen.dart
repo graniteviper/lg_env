@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'connection_screen.dart';
+import '../kml/iss_kml.dart';
+import '../services/iss_service.dart';
 import 'settings_screen.dart';
 import 'package:provider/provider.dart'; // Imports the library provider.dart (which contains tools to manage the app state)
 import '../services/lg_service.dart'; // Imports the LG service screen, which handles the logic to connect to the Liquid Galaxy screen
@@ -434,6 +436,26 @@ class MainScreen extends StatelessWidget {
                       onPressed: () => _cleanAll(context),
                       child: const Text('Clean KML and logos'),
                     ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () async {
+                      final lg = LgService();
+
+                      await lg.connectToLG();
+
+                      final pos = await IssService.fetchPosition();
+                      final kml = generateIssKml(pos.lat, pos.lon);
+
+                      await lg.uploadKml(kml, 'iss.kml');
+
+                      final lookAt =
+                          '<LookAt><longitude>${pos.lon}</longitude><latitude>${pos.lat}</latitude>'
+                          '<altitude>0</altitude><heading>0</heading><tilt>60</tilt>'
+                          '<range>1500000</range><altitudeMode>relativeToGround</altitudeMode></LookAt>';
+
+                      await lg.flyTo(lookAt);
+                    },
+                    child: const Text('Show ISS Live'),
                   ),
                 ],
               ),
