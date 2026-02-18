@@ -7,6 +7,14 @@ All modifications to the project MUST follow the defined agent flow.
 
 ---
 
+# How to use ( for developers ):
+1. Clone the repo using `git clone https://github.com/graniteviper/FlutterAndroidStarterKit`
+2. cd into the repo using `cd FlutterAndroidStarterKit`
+3. Install packages using `flutter pub get`
+4. Run using `flutter run` to test the basic application.
+5. Use antigravity as your IDE and let the antigravity agent know what you are building.
+6. Build with the help of the agent driven pipeline and spped up your development speed.
+
 ## 🧠 How This Repository Works
 
 This project is operated by an AI agent called **Antigravity**.
